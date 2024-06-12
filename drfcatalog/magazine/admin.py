@@ -22,3 +22,4 @@ admin.site.register(Watch, WatchAdmin)
 admin.site.register(Basket, BasketAdmin)
 admin.site.register(BasketItem, BasketItemAdmin)
 admin.site.register(Manufacturer, ManufacturerAdmin)
+
