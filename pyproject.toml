@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "deref"
+version = "0.1.0"
+description = ""
+authors = ["teoofrast <teoofrast@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = "4.2.13"
+djangorestframework = "^3.15.1"
+djangorestframework-simplejwt = "^5.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
