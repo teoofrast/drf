@@ -11,6 +11,7 @@ from magazine.views import *
 router = routers.DefaultRouter()
 router.register(r'watch', WatchAPIViewSet)
 router.register(r'manufacturers', ManufacturerViewSet)
+router.register(r'basket', AddToCart)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

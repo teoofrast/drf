@@ -1,4 +1,4 @@
-from rest_framework import viewsets, filters
+from rest_framework import viewsets, filters, mixins
 from rest_framework.response import Response
 from rest_framework.decorators import action
 
@@ -73,12 +73,12 @@ class ManufacturerViewSet(viewsets.ModelViewSet):
         return Response(manufacturer_data)
 
 
-class AddToCart(viewsets.ModelViewSet):
+class AddToCart(mixins.CreateModelMixin, viewsets.GenericViewSet):
     """
     Представление API для добавления товаров в корзину.
 
     Данное представление предоставляет следующие возможности:
-    - Добавление товара в корзину (`create()` метод)
+    - Добавление товара в корзину (метод "create")
 
     Атрибуты:
     - queryset (QuerySet): Queryset с объектами элементов корзины.
@@ -92,8 +92,8 @@ class AddToCart(viewsets.ModelViewSet):
         - Возвращает ответ с сообщением о добавлении товара в корзину.
 
     Примеры использования:
-    - Добавление товара в корзину: POST /add_to_cart/
-        - Тело запроса: {"product": 1, "quantity": 2}
+    - Добавление товара в корзину: POST /basket/
+        - Тело запроса: {"product": 1, "quantity": 2, "basket": 1}
         - Ответ: {"Status": "Item was added to cart"}
     """
     queryset = BasketItem.objects.all()

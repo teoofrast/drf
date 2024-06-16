@@ -3,11 +3,11 @@ from .models import *
 
 
 class WatchAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'is_active')
+    list_display = ('id', 'name', 'price', 'is_active')
 
 
 class ManufacturerAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('id', 'name',)
 
 
 class BasketAdmin(admin.ModelAdmin):
@@ -15,7 +15,7 @@ class BasketAdmin(admin.ModelAdmin):
 
 
 class BasketItemAdmin(admin.ModelAdmin):
-    list_display = ('basket', 'product', 'quantity')
+    list_display = ('id', 'basket', 'product', 'quantity')
 
 
 admin.site.register(Watch, WatchAdmin)
